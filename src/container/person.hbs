@@ -1,0 +1,127 @@
+{{#with person}}
+<section>
+    <div>
+        <h1>{{name}}</h1>
+    </div>
+    <div>
+        <b>Age: {{age}}; Sex: {{gender}}</b>
+    </div>
+    <br>
+    {{#with address}}
+    <div>
+        <address>{{street}}, {{city}}<br>
+            {{state}}, {{zip}}, {{country}}
+        </address>
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+</section>
+<section>
+    {{>title big=true data='Education:'}}
+    {{#each education}}
+    <div>
+        <em>
+            {{degree}}, {{major}},
+            {{university}}, {{graduationYear}}
+        </em>
+    </div>
+    {{/each}}
+    <br>
+    <hr>
+</section>
+<section>
+    {{>title big=true data='Experience:'}}
+    {{#each workExperience}}
+    <div>
+        <span><i>From:</i>{{startDate}} <i>To:</i>{{endDate}}</span>
+        <br>
+        <b>
+            {{title}}, {{company}}
+            <i>({{year_founded}}, {{industry}}):</i>
+        </b>
+        {{#each responsibilities}}
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+        {{/each}}
+        {{#each employees}}
+        {{>title data='Employee:'}}
+        <em>{{name}}, {{position}}, {{department}}</em>
+        <br><br>
+        <div>
+            <strong>Projects:</strong>
+            {{#each projects}}
+            <details>
+                <summary>{{name}}</summary>
+                <p>Status: {{status}}</p>
+                <p>Description: {{description}}</p>
+                <h3>Teams:</h3>
+                <ul>
+                    {{#each teams}}
+                    <li>
+                        <div><b>{{team_name}}</b></div>
+                        {{#with team_leader}}
+                        <div>Team Leader:
+                            <a href="mailto:{{email}}" target:"_blank">{{name}}, {{title}}</a>
+                        </div>
+                        {{/with}}
+                        <h4>Team members:</h4>
+                        <ul>
+                            {{#each team_members}}
+                            <li>
+                                <div>
+                                    <a href="mailto:{{email}}" target:"_blank">{{name}}, {{title}}</a>
+                                </div>
+                                <b>Skills:</b>
+                                <ul>
+                                    {{#each skills}}
+                                    <li>{{this}}</li>
+                                    {{/each}}
+                                </ul>
+
+
+                                <div>
+                                    <strong>Projects:</strong>
+                                    {{#each projects}}
+                                    <details>
+                                        <summary>{{name}}</summary>
+                                        <p>Description: {{description}}</p>
+                                        <div>Technologies</div>
+                                        <ul>
+                                            {{#each technologies}}
+                                            <li>{{this}}</li>
+                                            {{/each}}
+                                        </ul>
+
+                                        <h4>Team members:</h4>
+                                        <ul>
+                                            {{#each team_members}}
+                                            <li>
+                                                <div>
+                                                    <i>{{name}}, {{title}}</i>
+                                                </div>
+                                            </li>
+                                            {{/each}}
+                                        </ul>
+                                    </details>
+                                    {{/each}}
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    {{/each}}
+                </ul>
+            </details>
+            {{/each}}
+        </div>
+
+        {{/each}}
+    </div>
+    <br>
+    {{/each}}
+    <br>
+    <hr>
+</section>
+{{/with}}
