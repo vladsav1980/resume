@@ -34,7 +34,9 @@
                                 {{#each exhibits}}
                                 <li>
                                     <div><b>Name: </b>{{name}} {{#if audio_guide}}(audio guide){{/if}}</div>
+                                    {{#if artist}}
                                     <div><b>Artist: </b>{{artist}}</div>
+                                    {{/if}}
                                     <div><b>Description: </b>{{description}}</div>
                                 </li>
                                 <br>
