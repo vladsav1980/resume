@@ -826,8 +826,8 @@ router.get('/facebook', function (req, res) {
         ],
       },
     ],
-
-
+  })
+})
 
 // router.get Створює нам один ентпоїнт
 
@@ -914,7 +914,8 @@ router.get('/mac', function (req, res) {
         },
       ],
     },
-
+  })
+})
 
 router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -1010,6 +1011,8 @@ router.get('/car', function (req, res) {
       },
       total: 28990,
     },
+  })
+})
 
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -1086,9 +1089,23 @@ router.get('/js', function (req, res) {
         type: 'blog',
       },
     ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
 
+// ================================================================
 
+// ================================================================
 
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrap', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap', {
+    layout: 'basic',
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
