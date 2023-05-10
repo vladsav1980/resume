@@ -1169,8 +1169,8 @@ router.get('/task22', function (req, res) {
           },
         },
       },
-      
-       })
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -1238,15 +1238,12 @@ router.get('/task21', function (req, res) {
           url: 'https://getbootstrap.com/',
         },
       ],
-
     },
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-
 // ================================================================
-
 
 // Підключаємо роутер до бек-енду
 module.exports = router
