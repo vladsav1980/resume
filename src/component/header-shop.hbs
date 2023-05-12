@@ -1,0 +1,13 @@
+<nav>
+    {{#with navigation}}
+    <div class="card mb-5">
+        <div class="nav">
+            {{#each links}}
+            <div class="nav-item">
+                <a class="nav-link  {{#if @last}}disabled{{/if}}" href="{{href}}" target="_blank">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/with}}
+</nav>
