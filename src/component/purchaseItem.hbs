@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-4 d-flex align-items-center">
+        <div class="my-auto">
+            <p>{{number}}</p>
+            <h5>{{status}}</h5>
+        </div>
+    </div>
+    <div class="col-2 d-flex align-items-center">
+        <div class="my-auto">
+            {{#with amount}}
+            <p>{{title}}:</p>
+            <h5>{{value}}</h5>
+            {{/with}}
+        </div>
+    </div>
+    <div class="col-4 d-flex align-items-center">
+        <div class="my-auto">
+            {{#each images}}
+            <img src="{{this}}" class="rounded pe-1">
+            {{/each}}
+        </div>
+    </div>
+    <div class="col-2 d-flex align-items-center">
+        <div class="my-auto">
+            {{#with button}}
+            <a {{#if isPrimary}}class="btn btn-primary btn-lg" {{/if}} href="{{link}}">{{text}}</a>
+            {{/with}}
+        </div>
+    </div>
+</div>
+<hr class="mb-4">
