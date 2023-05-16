@@ -6,30 +6,35 @@
 <div>
     {{#with main}}
     <main>
-        <section class="mb-5">
-            {{>title big=true data='My Educations:'}}
-            <ul class="ms-5">
-                {{#each educations}}
-                <li>
-                    {{name}}
-                    {{#unless isEnd}}
-                    (ще в процесі)
-                    {{/unless}}
-                </li>
-                {{/each}}
-            </ul>
-        </section>
-        <section>
-            {{>title big=false data='My Certificates:'}}
-            <ul class="ms-5">
-                {{#each certificates}}
-                <li>
-                    {{name}}
-                    (ID: {{id}})
-                </li>
-                {{/each}}
-            </ul>
-        </section>
+        <div class="row">
+            <div class="col-12">
+                <section class="mb-5">
+                    {{>title big=true data='My Educations:'}}
+                    <ul class="ms-5">
+                        {{#each educations}}
+                        <li>
+                            {{name}}
+                            {{#unless isEnd}}
+                            (ще в процесі)
+                            {{/unless}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </section>
+                <section>
+                    {{>title big=false data='My Certificates:'}}
+                    <ul class="ms-5">
+                        {{#each certificates}}
+                        <li>
+                            {{name}}
+                            (ID: {{id}})
+                        </li>
+                        {{/each}}
+                    </ul>
+                </section>
+            </div>
+        </div>
+
     </main>
     {{/with}}
 </div>
