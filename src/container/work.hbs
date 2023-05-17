@@ -6,80 +6,114 @@
 <div>
     {{#with main}}
     <main>
-        <section>
-            {{>title big=true data='Work history'}}
-            <div>
-                <p>
-                <ul>
-                    {{#each works}}
-                    <li>
-                        <div>{{position}}</div>
-                        <br>
+        <div class="row">
+            <div class="col-12">
+                <section>
+                    {{>title big=true data='Work history'}}
+                    <div>
 
-                        <div>
-                            {{duration.from}} -
-                            {{#if duration.to}}
-                            {{duration.to}}
-                            {{else}} present
-                            {{/if}}
+                        {{#each works}}
+                        <div class="card mb-5">
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <h5>{{position}}</h5>
+                                </div>
+
+
+                                <div class="mb-4">
+                                    {{duration.from}} -
+                                    {{#if duration.to}}
+                                    {{duration.to}}
+                                    {{else}} present
+                                    {{/if}}
+                                </div>
+
+
+                                <div class="mb-5">
+                                    {{#if company.url}}
+                                    {{>link text=company.name href=company.url blank=true noLine=true}}
+                                    {{else}}
+                                    <b>{{company.name}}</b>
+                                    {{/if}}
+                                </div>
+
+
+
+                                <div class="mb-4"><strong>Projects ({{projectAmount}}):</strong></div>
+                                <br>
+
+                                {{#each projects}}
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div class="mb-3">{{>link text=name href=url blank=true noLine=true}}</div>
+
+                                        <div class="mb-3">
+                                            <p>{{about}}</p>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="mb-2">
+                                                            <em>Project Stacks ({{stackAmount}}):</em>
+                                                        </div>
+
+                                                        <div>
+                                                            <ul class="list-group">
+                                                                {{#each stacks}}
+                                                                <li class="list-group-item">{{name}}</li>
+                                                                {{/each}}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="mb-2">
+                                                            <em>Project Awards ({{awardAmount}}):</em>
+                                                        </div>
+
+                                                        <div>
+                                                            <ul class="list-group">
+                                                                {{#each awards}}
+                                                                <li class="list-group-item">{{name}}</li>
+                                                                {{/each}}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                                {{/each}}
+
+
+
+                            </div>
                         </div>
-                        <br>
-
-                        <div>
-                            {{#if company.url}}
-                            {{>link text=company.name href=company.url blank=true noLine=true}}
-                            {{else}}
-                            <b>{{company.name}}</b>
-                            {{/if}}
-                        </div>
-
-                        <br>
-                        <br>
-
-                        <div><strong>Projects ({{projectAmount}}):</strong></div>
-                        <br>
-                        <ul>
-                            {{#each projects}}
-                            <li>
-                                <div>{{>link text=name href=url blank=true noLine=true}}</div>
-                                <br>
-                                <div>
-                                    <p>{{about}}</p>
-                                </div>
-                                <br>
-                                <div><em>Project Stacks ({{stackAmount}}):</em></div>
-                                <br>
-                                <div>
-                                    <ul>
-                                        {{#each stacks}}
-                                        <li>{{name}}</li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
-                                <br>
-                                <div><em>Project Awards ({{awardAmount}}):</em></div>
-                                <br>
-                                <div>
-                                    <ul>
-                                        {{#each awards}}
-                                        <li>{{name}}</li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
 
 
-                            </li>
-                            {{/each}}
-                        </ul>
+                        {{/each}}
 
-                    </li>
-                    <br>
-                    {{/each}}
-                </ul>
-                </p>
+
+                    </div>
+                </section>
+
+
             </div>
-        </section>
-
+        </div>
 
     </main>
     {{/with}}
